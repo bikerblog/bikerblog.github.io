@@ -11,6 +11,9 @@
 
     <style>
         body {
+	        display: flex;
+            flex-direction: column;     
+            min-height: 100vh;
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
@@ -25,6 +28,7 @@
             padding: 100px 20px;
             text-align: center;
             color: white;
+            flex-shrink: 0;
         }
 
         header h1 {
@@ -53,9 +57,15 @@
             font-weight: bold;
         }
 
+	    .content-container {
+    		flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .content {
             max-width: 900px;
-            margin: 40px auto;
             padding: 20px;
             background-color: white;
             border-radius: 10px;
@@ -88,6 +98,7 @@
         }
 
         input, textarea {
+            width: auto;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -164,22 +175,24 @@
         <a href="contact.html">Kapcsolat</a>
     </nav>
 
-    <div class="content">
-        <h2>Lépj Velünk Kapcsolatba</h2>
-        <p>Ha bármilyen kérdésed van, vagy szeretnél többet megtudni az elektromos kerékpárokról, töltsd ki az alábbi űrlapot, és mi hamarosan felvesszük veled a kapcsolatot.</p>
-        
-        <form action="#" method="post">
-            <label for="name">Név:</label>
-            <input type="text" id="name" name="name" placeholder="Add meg a neved" required>
+    <div class="content-container">
+        <div class="content">
+            <h2>Lépj Velünk Kapcsolatba</h2>
+            <p>Ha bármilyen kérdésed van, vagy szeretnél többet megtudni az elektromos kerékpárokról, töltsd ki az alábbi űrlapot, és mi hamarosan felvesszük veled a kapcsolatot.</p>
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Add meg az email címed" required>
-            
-            <label for="message">Üzenet:</label>
-            <textarea id="message" name="message" rows="4" placeholder="Írd ide az üzeneted" required></textarea>
-            
-            <button type="submit">Küldés</button>
-        </form>
+            <form action="#" method="post">
+                <label for="name">Név:</label>
+                <input type="text" id="name" name="name" placeholder="Add meg a neved" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Add meg az email címed" required>
+                
+                <label for="message">Üzenet:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Írd ide az üzeneted" required></textarea>
+                
+                <button type="submit">Küldés</button>
+            </form>
+        </div>
     </div>
 
     <footer>
